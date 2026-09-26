@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Universities & Courses — Edusathi Germany</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:wght@500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
+<link rel="stylesheet" href="css/responsive.css">
+<link rel="stylesheet" href="css/german.css">
+</head>
+<body>
+
+<header class="navbar">
+  <div class="container nav-inner">
+    <a href="index.html" class="brand">
+      <div class="brand-mark">ED</div>
+      <div class="brand-name">Edusathi Germany<small>Study in Germany</small></div>
+    </a>
+    <button class="hamburger" aria-label="Toggle menu"><span></span><span></span><span></span></button>
+    <nav class="nav-links">
+      <a href="index.html">Home</a>
+      <a href="eligibility.html">Eligibility</a>
+      <a href="universities.html">Universities</a>
+      <a href="counselling.html">Counselling</a>
+      <a href="german.html">Learn German</a>
+      <a href="dashboard.html">Dashboard</a>
+    </nav>
+    <div class="nav-actions" data-nav-actions></div>
+  </div>
+</header>
+
+<section class="section-tight section-alt">
+  <div class="container">
+    <div class="eyebrow">University &amp; Course Explorer</div>
+    <h1 style="font-size:2.2rem;">Explore German Universities &amp; Programs</h1>
+    <p style="max-width:560px;">Filter by city, degree or language to find programs that match your goals.</p>
+
+    <div class="card card-pad" style="margin-top:24px;">
+      <form id="filterForm" class="form-grid" style="grid-template-columns:repeat(4,1fr);">
+        <div class="field"><label for="fUni">University</label>
+          <select id="fUni"><option value="">All Universities</option></select>
+        </div>
+        <div class="field"><label for="fCity">City</label>
+          <select id="fCity"><option value="">All Cities</option></select>
+        </div>
+        <div class="field"><label for="fDegree">Degree</label>
+          <select id="fDegree"><option value="">All Degrees</option><option>Bachelor's</option><option>Master's</option></select>
+        </div>
+        <div class="field"><label for="fLang">Language</label>
+          <select id="fLang"><option value="">All Languages</option><option>English</option><option>German</option></select>
+        </div>
+        <div class="field"><label for="fCourse">Course</label>
+          <input type="text" id="fCourse" placeholder="e.g. Data Science">
+        </div>
+        <div class="field"><label for="fType">University Type</label>
+          <select id="fType"><option value="">Any Type</option><option>Public</option><option>Private</option></select>
+        </div>
+        <div class="field"><label for="fDuration">Duration</label>
+          <select id="fDuration"><option value="">Any Duration</option><option>2 Years</option><option>3 Years</option><option>3.5 Years</option></select>
+        </div>
+        <div class="field" style="justify-content:flex-end;">
+          <div style="display:flex; gap:10px;">
+            <button type="submit" class="btn btn-primary btn-block">Search</button>
+            <button type="button" id="resetFilters" class="btn btn-outline btn-block">Reset</button>
+          </div>
+        </div>
+      </form>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+    <div class="flex-between" style="margin-bottom:18px;">
+      <h2 style="margin:0; font-size:1.4rem;">Universities</h2>
+      <span class="badge badge-navy" id="uniCount">6 results</span>
+    </div>
+    <div class="grid-3" id="uniGrid"></div>
+  </div>
+</section>
+
+<section class="section section-alt">
+  <div class="container">
+    <div class="flex-between" style="margin-bottom:18px;">
+      <h2 style="margin:0; font-size:1.4rem;">Courses</h2>
+      <span class="badge badge-navy" id="courseCount">8 results</span>
+    </div>
+    <div class="grid-3" id="courseGrid"></div>
+  </div>
+</section>
+
+<!-- Course Detail Modal -->
+<div class="modal-overlay" id="courseModal">
+  <div class="modal-box">
+    <button class="modal-close" id="closeModal">✕</button>
+    <div id="modalContent"></div>
+  </div>
+</div>
+
+<footer class="footer">
+  <div class="container footer-bottom" style="border-top:none; margin-top:0;">
+    <span>© 2026 Edusathi Germany. All Rights Reserved.</span>
+    <span><a href="index.html" style="color:rgba(255,255,255,.7);">Back to Home</a></span>
+  </div>
+</footer>
+
+<script src="js/main.js"></script>
+<script src="js/universities.js"></script>
+</body>
+</html>

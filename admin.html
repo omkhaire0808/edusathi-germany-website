@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Admin Panel — Edusathi Germany</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:wght@500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
+<link rel="stylesheet" href="css/responsive.css">
+<link rel="stylesheet" href="css/german.css">
+</head>
+<body>
+
+<div class="sidebar-overlay"></div>
+<div class="dash-shell">
+
+  <!-- SIDEBAR -->
+  <aside class="sidebar">
+    <a href="index.html" class="sidebar-brand">
+      <div class="brand-mark">ED</div>
+      <div class="brand-name" style="color:#fff;">Edusathi<small style="color:rgba(255,255,255,.55);">Admin Panel</small></div>
+    </a>
+    <nav>
+      <a href="#" class="side-link active" data-target="panel-overview">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="7" height="9"/><rect x="14" y="3" width="7" height="5"/><rect x="14" y="12" width="7" height="9"/><rect x="3" y="16" width="7" height="5"/></svg>
+        Overview
+      </a>
+      <a href="#" class="side-link" data-target="panel-students">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="9" cy="8" r="4"/><path d="M2 21c0-4 3-6 7-6s7 2 7 6"/><path d="M16 11c2 0 4 1.5 4 4"/><circle cx="17" cy="7" r="3"/></svg>
+        Students
+      </a>
+      <a href="#" class="side-link" data-target="panel-applications">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 12l2 2 4-4"/><circle cx="12" cy="12" r="9"/></svg>
+        Applications
+      </a>
+      <a href="#" class="side-link" data-target="panel-bookings">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="8" r="4"/><path d="M4 21c0-4 4-6 8-6s8 2 8 6"/></svg>
+        Counselling Bookings
+      </a>
+      <a href="#" class="side-link" id="adminLogout" style="margin-top:20px; border-top:1px solid rgba(255,255,255,.14); padding-top:18px;">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 21H5a2 2 0 01-2-2V5a2 2 0 012-2h4"/><path d="M16 17l5-5-5-5"/><path d="M21 12H9"/></svg>
+        Logout
+      </a>
+    </nav>
+  </aside>
+
+  <!-- MAIN -->
+  <main class="dash-main">
+    <div class="dash-header">
+      <div style="display:flex; align-items:center; gap:14px;">
+        <button class="hamburger dash-hamburger" aria-label="Toggle menu"><span></span><span></span><span></span></button>
+        <div>
+          <h1>Admin Panel 🛡️</h1>
+          <p class="mt-0">Manage students, applications and counselling bookings.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- SUMMARY CARDS -->
+    <div class="summary-grid">
+      <div class="summary-card"><div class="val" id="admSumStudents">0</div><div class="lbl">Registered Students</div></div>
+      <div class="summary-card"><div class="val" id="admSumApplications">0</div><div class="lbl">Total Applications</div></div>
+      <div class="summary-card"><div class="val" id="admSumPending">0</div><div class="lbl">Pending Review</div></div>
+      <div class="summary-card"><div class="val" id="admSumApproved">0</div><div class="lbl">Approved</div></div>
+      <div class="summary-card"><div class="val" id="admSumBookings">0</div><div class="lbl">Counselling Bookings</div></div>
+    </div>
+
+    <!-- PANEL: OVERVIEW -->
+    <section id="panel-overview" class="dash-panel">
+      <div class="card card-pad">
+        <h3>Recent Applications</h3>
+        <div class="table-wrap" style="margin-top:16px;">
+          <table class="data-table">
+            <thead><tr><th>Student</th><th>University</th><th>Course</th><th>Date</th><th>Status</th></tr></thead>
+            <tbody id="overviewAppsBody"></tbody>
+          </table>
+        </div>
+      </div>
+    </section>
+
+    <!-- PANEL: STUDENTS -->
+    <section id="panel-students" class="dash-panel" style="display:none;">
+      <div class="card card-pad">
+        <div class="flex-between"><h3>Registered Students</h3><span class="badge badge-navy" id="studentCountBadge">0 students</span></div>
+        <div class="table-wrap" style="margin-top:16px;">
+          <table class="data-table">
+            <thead><tr><th>Name</th><th>Email</th><th>Qualification</th><th>Preferred Course</th><th>Registered</th><th>Actions</th></tr></thead>
+            <tbody id="studentsTableBody"></tbody>
+          </table>
+        </div>
+      </div>
+    </section>
+
+    <!-- PANEL: APPLICATIONS -->
+    <section id="panel-applications" class="dash-panel" style="display:none;">
+      <div class="card card-pad">
+        <div class="flex-between"><h3>All Applications</h3><span class="badge badge-navy" id="appCountBadge">0 applications</span></div>
+        <div class="filter-bar" style="margin-top:16px;">
+          <label style="font-size:.82rem; font-weight:600; color:var(--navy);">Filter by status:</label>
+          <select id="appStatusFilter" class="status-select">
+            <option value="">All</option>
+            <option value="Submitted">Submitted</option>
+            <option value="Under Review">Under Review</option>
+            <option value="Pending">Pending</option>
+            <option value="Approved">Approved</option>
+            <option value="Rejected">Rejected</option>
+          </select>
+        </div>
+        <div class="table-wrap">
+          <table class="data-table">
+            <thead><tr><th>Student</th><th>University</th><th>Course</th><th>Date</th><th>Status</th><th>Actions</th></tr></thead>
+            <tbody id="applicationsAdminBody"></tbody>
+          </table>
+        </div>
+      </div>
+    </section>
+
+    <!-- PANEL: BOOKINGS -->
+    <section id="panel-bookings" class="dash-panel" style="display:none;">
+      <div class="card card-pad">
+        <div class="flex-between"><h3>Counselling Bookings</h3><span class="badge badge-navy" id="bookingCountBadge">0 bookings</span></div>
+        <div class="table-wrap" style="margin-top:16px;">
+          <table class="data-table">
+            <thead><tr><th>Student</th><th>Counsellor</th><th>Date</th><th>Time</th><th>Type</th><th>Status</th><th>Actions</th></tr></thead>
+            <tbody id="bookingsAdminBody"></tbody>
+          </table>
+        </div>
+      </div>
+    </section>
+
+  </main>
+</div>
+
+<!-- Student Detail Modal -->
+<div class="modal-overlay" id="studentModal">
+  <div class="modal-box">
+    <button class="modal-close" id="closeStudentModal">✕</button>
+    <div id="studentModalContent"></div>
+  </div>
+</div>
+
+<script src="js/main.js"></script>
+<script src="js/admin.js"></script>
+</body>
+</html>

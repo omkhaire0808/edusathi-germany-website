@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Counselling & Booking — Edusathi Germany</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:wght@500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
+<link rel="stylesheet" href="css/responsive.css">
+<link rel="stylesheet" href="css/german.css">
+</head>
+<body>
+
+<header class="navbar">
+  <div class="container nav-inner">
+    <a href="index.html" class="brand">
+      <div class="brand-mark">ED</div>
+      <div class="brand-name">Edusathi Germany<small>Study in Germany</small></div>
+    </a>
+    <button class="hamburger" aria-label="Toggle menu"><span></span><span></span><span></span></button>
+    <nav class="nav-links">
+      <a href="index.html">Home</a>
+      <a href="eligibility.html">Eligibility</a>
+      <a href="universities.html">Universities</a>
+      <a href="counselling.html">Counselling</a>
+      <a href="german.html">Learn German</a>
+      <a href="dashboard.html">Dashboard</a>
+    </nav>
+    <div class="nav-actions" data-nav-actions></div>
+  </div>
+</header>
+
+<section class="section-tight section-alt">
+  <div class="container">
+    <div class="eyebrow">Counselling</div>
+    <h1 style="font-size:2.2rem;">Get Personalized Counselling</h1>
+    <p style="max-width:560px;">Speak with an Edusathi Germany counsellor and get personalized guidance for your study journey.</p>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+    <h2 style="font-size:1.4rem;">Our Counsellors</h2>
+    <div class="grid-3" id="counsellorGrid"></div>
+  </div>
+</section>
+
+<section class="section section-alt">
+  <div class="container">
+    <div class="grid-2" style="grid-template-columns:1.1fr .9fr; align-items:flex-start;">
+      <div class="card card-pad">
+        <h3>Book a Consultation</h3>
+        <form id="bookingForm">
+          <div class="form-grid">
+            <div class="field"><label>Counsellor</label>
+              <select id="bCounsellor" required></select>
+            </div>
+            <div class="field"><label>Consultation Type</label>
+              <select id="bType" required>
+                <option>Video Consultation</option>
+                <option>Phone Consultation</option>
+                <option>Online Meeting</option>
+              </select>
+            </div>
+            <div class="field"><label>Date</label><input type="date" id="bDate" required></div>
+            <div class="field"><label>Time Slot</label>
+              <select id="bTime" required>
+                <option>10:00 AM</option><option>11:00 AM</option><option>1:00 PM</option>
+                <option>3:00 PM</option><option>5:00 PM</option>
+              </select>
+            </div>
+          </div>
+          <button type="submit" class="btn btn-accent" style="margin-top:20px;">Book Consultation</button>
+        </form>
+      </div>
+
+      <div id="confirmationCard" style="display:none;">
+        <div class="card card-pad">
+          <span class="badge badge-green">Booking Confirmed ✓</span>
+          <h3 style="margin-top:14px;">Booking ID: <span id="cBookingId"></span></h3>
+          <div class="divider"></div>
+          <p style="margin:6px 0;"><strong>Counsellor:</strong> <span id="cCounsellor"></span></p>
+          <p style="margin:6px 0;"><strong>Date:</strong> <span id="cDate"></span></p>
+          <p style="margin:6px 0;"><strong>Time:</strong> <span id="cTime"></span></p>
+          <p style="margin:6px 0;"><strong>Type:</strong> <span id="cType"></span></p>
+          <p style="margin:6px 0;"><strong>Status:</strong> <span class="badge badge-green">Confirmed</span></p>
+          <button class="btn btn-primary btn-block" style="margin-top:14px;" onclick="showToast('This would open your video meeting link.')">Join Meeting</button>
+        </div>
+      </div>
+      <div id="confirmationPlaceholder" class="card card-pad empty-state">
+        Your booking confirmation will appear here once you book a consultation.
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+    <h2 style="font-size:1.4rem;">Study Resources</h2>
+    <div class="grid-3" id="resourceGrid"></div>
+  </div>
+</section>
+
+<footer class="footer">
+  <div class="container footer-bottom" style="border-top:none; margin-top:0;">
+    <span>© 2026 Edusathi Germany. All Rights Reserved.</span>
+    <span><a href="index.html" style="color:rgba(255,255,255,.7);">Back to Home</a></span>
+  </div>
+</footer>
+
+<script src="js/main.js"></script>
+<script src="js/counselling.js"></script>
+</body>
+</html>

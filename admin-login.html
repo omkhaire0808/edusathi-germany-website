@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Admin Login — Edusathi Germany</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:wght@500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
+<link rel="stylesheet" href="css/responsive.css">
+<link rel="stylesheet" href="css/german.css">
+</head>
+<body>
+
+<div class="auth-wrap">
+  <div class="auth-side">
+    <a href="index.html" class="brand">
+      <div class="brand-mark">ED</div>
+      <div class="brand-name" style="color:#fff;">Edusathi Germany<small style="color:rgba(255,255,255,.6);">Admin Panel</small></div>
+    </a>
+    <div>
+      <svg viewBox="0 0 320 240" style="width:100%; max-width:320px;">
+        <rect x="40" y="40" width="240" height="160" rx="14" fill="rgba(255,255,255,.08)" stroke="rgba(255,255,255,.2)"/>
+        <rect x="60" y="64" width="80" height="10" rx="5" fill="rgba(255,255,255,.4)"/>
+        <rect x="60" y="86" width="140" height="8" rx="4" fill="rgba(255,255,255,.25)"/>
+        <rect x="60" y="102" width="110" height="8" rx="4" fill="rgba(255,255,255,.25)"/>
+        <circle cx="240" cy="150" r="20" fill="#C8102E"/>
+        <text x="20" y="150" fill="#fff" font-family="Fraunces" font-size="17" font-weight="700"></text>
+      </svg>
+      <h3 style="color:#fff; margin-top:20px;">Admin Control Center</h3>
+      <p style="color:rgba(255,255,255,.75); max-width:340px;">Manage registered students, review and approve or reject applications, and track counselling bookings — all from one place.</p>
+    </div>
+    <div class="demo-list">
+      <strong>Demo admin credentials</strong><br>
+      Email: admin@edusathi.com<br>
+      Password: admin123
+    </div>
+  </div>
+
+  <div class="auth-form-side">
+    <div class="auth-card">
+      <h1 style="font-size:1.9rem;">Admin Login</h1>
+      <p>Sign in to manage students and applications.</p>
+
+      <form id="adminLoginForm" style="margin-top:22px;">
+        <div class="field">
+          <label>Admin Email</label>
+          <input type="email" id="adminEmail" placeholder="admin@edusathi.com" required>
+        </div>
+        <div class="field">
+          <label>Password</label>
+          <input type="password" id="adminPassword" placeholder="Enter admin password" required>
+        </div>
+        <p class="form-error" id="adminLoginError">Invalid admin email or password.</p>
+        <button type="submit" class="btn btn-primary btn-block" style="margin-top:18px;">Login to Admin Panel</button>
+      </form>
+
+      <p style="text-align:center; margin-top:18px; font-size:.82rem;">Not an admin? <a href="login.html" style="color:var(--navy-light); font-weight:600;">Student Login</a></p>
+    </div>
+  </div>
+</div>
+
+<script src="js/main.js"></script>
+<script src="js/admin.js"></script>
+</body>
+</html>

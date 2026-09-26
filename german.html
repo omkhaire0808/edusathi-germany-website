@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Learn Basic German — Edusathi Germany</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:wght@500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
+<link rel="stylesheet" href="css/responsive.css">
+<link rel="stylesheet" href="css/german.css">
+</head>
+<body>
+
+<header class="navbar">
+  <div class="container nav-inner">
+    <a href="index.html" class="brand">
+      <div class="brand-mark">ED</div>
+      <div class="brand-name">Edusathi Germany<small>Study in Germany</small></div>
+    </a>
+    <button class="hamburger" aria-label="Toggle menu"><span></span><span></span><span></span></button>
+    <nav class="nav-links">
+      <a href="index.html">Home</a>
+      <a href="eligibility.html">Eligibility</a>
+      <a href="universities.html">Universities</a>
+      <a href="counselling.html">Counselling</a>
+      <a href="german.html">Learn German</a>
+      <a href="dashboard.html">Dashboard</a>
+    </nav>
+    <div class="nav-actions" data-nav-actions></div>
+  </div>
+</header>
+
+<section class="section-tight section-alt">
+  <div class="container">
+    <div class="eyebrow">Learn Basic German</div>
+    <h1 style="font-size:2.2rem;">Survival German for Life in Germany</h1>
+    <p style="max-width:600px;">Find out how much German you already know, then learn essential words, everyday phrases and survival German for student life — with quizzes and a quick game to help it stick.</p>
+  </div>
+</section>
+
+<!-- STEP 1: LEVEL TEST -->
+<section class="section">
+  <div class="container quiz-box">
+    <div class="g-step">
+      <div class="g-step-num">1</div>
+      <div><h2>Check Your German Level</h2><p>Answer 10 quick questions to see where you stand today.</p></div>
+    </div>
+
+    <div class="card card-pad" id="levelIntro">
+      <p>This short test covers greetings, basic vocabulary and simple sentence structure. It takes about 2 minutes and helps us tailor the lessons below to your level.</p>
+      <button class="btn btn-accent" id="startLevelTestBtn">Start Level Test</button>
+    </div>
+
+    <div class="card card-pad" id="levelQuizArea" style="display:none;">
+      <div class="quiz-progress" id="levelProgress">Question 1 of 10</div>
+      <div class="quiz-question" id="levelQuestion"></div>
+      <div class="quiz-options" id="levelOptions"></div>
+    </div>
+
+    <div class="card card-pad text-center" id="levelResult" style="display:none;">
+      <p class="eyebrow" style="justify-content:center;">Your Level</p>
+      <div class="level-badge" id="levelBadge">Elementary (A1)</div>
+      <div class="level-meter" id="levelMeter"></div>
+      <p id="levelScoreText" style="margin-top:10px;"></p>
+      <p id="levelNote" style="font-weight:600; color:var(--navy);"></p>
+      <button class="btn btn-outline btn-sm" id="retakeLevelTestBtn">Retake Test</button>
+    </div>
+  </div>
+</section>
+
+<!-- STEP 2: LESSONS -->
+<section class="section section-alt">
+  <div class="container">
+    <div class="g-step">
+      <div class="g-step-num">2</div>
+      <div><h2>Learn With Flashcards</h2><p>Tap a card to flip it and reveal the meaning and pronunciation.</p></div>
+    </div>
+
+    <div class="tabs" id="lessonTabs">
+      <button class="tab-btn active" data-cat="greetings">Greetings &amp; Basics</button>
+      <button class="tab-btn" data-cat="numbers">Numbers</button>
+      <button class="tab-btn" data-cat="everyday">Everyday Phrases</button>
+      <button class="tab-btn" data-cat="survival">Living in Germany</button>
+    </div>
+
+    <div class="flash-grid" id="flashGrid"></div>
+  </div>
+</section>
+
+<!-- STEP 3: PRACTICE QUIZ -->
+<section class="section">
+  <div class="container quiz-box">
+    <div class="g-step">
+      <div class="g-step-num">3</div>
+      <div><h2>Practice Quiz</h2><p>Complete the sentence with the correct German word.</p></div>
+    </div>
+
+    <div class="card card-pad" id="practiceIntro">
+      <p>8 short sentences based on the words you just learned. Let's see how much stuck!</p>
+      <button class="btn btn-accent" id="startPracticeBtn">Start Practice Quiz</button>
+    </div>
+
+    <div class="card card-pad" id="practiceQuizArea" style="display:none;">
+      <div class="quiz-progress" id="practiceProgress">Sentence 1 of 8</div>
+      <div class="quiz-question" id="practiceQuestion"></div>
+      <p style="font-size:.82rem; margin-top:-10px;" id="practiceHint"></p>
+      <div class="quiz-options" id="practiceOptions"></div>
+    </div>
+
+    <div class="card card-pad text-center" id="practiceResult" style="display:none;">
+      <div class="quiz-score-ring" id="practiceRing" style="--pct:0;">
+        <div class="inner"><b id="practiceScoreNum">0%</b><small>SCORE</small></div>
+      </div>
+      <p id="practiceScoreText"></p>
+      <button class="btn btn-outline btn-sm" id="retakePracticeBtn">Retake Quiz</button>
+    </div>
+  </div>
+</section>
+
+<!-- STEP 4: GAME -->
+<section class="section section-alt">
+  <div class="container">
+    <div class="g-step">
+      <div class="g-step-num">4</div>
+      <div><h2>Word Match Game</h2><p>Flip the cards and match each German word to its English meaning.</p></div>
+    </div>
+
+    <div class="card card-pad" id="gameIntro">
+      <p>Match all 8 German–English pairs in as few moves and as little time as possible.</p>
+      <button class="btn btn-accent" id="startGameBtn">Start Game</button>
+    </div>
+
+    <div class="card card-pad" id="gameArea" style="display:none;">
+      <div class="game-stats">
+        <div class="game-stat"><b id="gameMoves">0</b><span>Moves</span></div>
+        <div class="game-stat"><b id="gameTime">00:00</b><span>Time</span></div>
+        <div class="game-stat"><b id="gameMatched">0 / 8</b><span>Matched</span></div>
+      </div>
+      <div class="game-grid" id="gameGrid"></div>
+    </div>
+
+    <div class="card card-pad game-win" id="gameWin" style="display:none;">
+      <div class="icon-badge" style="margin:0 auto 16px; background:#E4F5EC; color:var(--green);">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 12l2 2 4-4"/><circle cx="12" cy="12" r="9"/></svg>
+      </div>
+      <h3>All Pairs Matched! 🎉</h3>
+      <p id="gameWinStats"></p>
+      <button class="btn btn-primary" id="playAgainBtn">Play Again</button>
+    </div>
+  </div>
+</section>
+
+<footer class="footer">
+  <div class="container footer-bottom" style="border-top:none; margin-top:0;">
+    <span>© 2026 Edusathi Germany. All Rights Reserved.</span>
+    <span><a href="index.html" style="color:rgba(255,255,255,.7);">Back to Home</a></span>
+  </div>
+</footer>
+
+<script src="js/main.js"></script>
+<script src="js/german.js"></script>
+</body>
+</html>
